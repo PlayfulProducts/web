@@ -15,15 +15,26 @@
 }
 
 /* General styling */
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #004E59;
   color: #FFFFF0;
   font-family: Arial, sans-serif;
-  height: auto;
 }
 
+.wrapper {
+  flex: 1;  /* Takes up remaining space to push footer down */
+}
+
+/* Header styling */
 header {
   display: flex;
   align-items: center;
@@ -60,9 +71,13 @@ nav ul.menu {
   list-style-type: none;
   display: flex;
   gap: 60px;
-  margin: 0;
-  padding-left: 40px;
+  margin: 0 auto;
+  padding-left: 0;
+  justify-content: flex-end; /* Align menu items to the right */
+  width: 100%;
+  max-width: 1200px; /* Limit the width to avoid it looking centered on very wide screens */
 }
+
 
 nav ul.menu li {
   font-family: 'ShareTechMono', monospace;
@@ -162,13 +177,11 @@ nav ul.menu a.active {
 /* Footer styling */
 footer {
   text-align: center;
-  padding: 5px; /* Reduced padding to make the footer thinner */
+  padding: 10px; /* Increased padding to make the footer more noticeable */
   background-color: #003D48;
   color: #FFFFF0;
   font-size: 0.8rem; /* Slightly smaller font size */
   font-family: 'ShareTechMono', monospace;
-  position: fixed; /* Keep the footer at the bottom */
-  bottom: 0;
   width: 100%;
 }
 
