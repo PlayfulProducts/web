@@ -44,7 +44,7 @@ header {
 }
 
 .company-name {
-  font-family: 'Fewriter', monospace;
+  font-family: 'fewriter', monospace;
   font-size: 2rem;
   color: #FFBF4D;
   letter-spacing: 0.1rem;
@@ -147,7 +147,7 @@ nav ul.menu a.active {
 }
 
 .launching-text {
-  font-family: 'Fewriter', monospace;
+  font-family: 'fewriter', monospace;
   font-size: 1.5rem;
   color: #FFBF4D;
   text-align: center;
