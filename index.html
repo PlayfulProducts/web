@@ -16,6 +16,10 @@
       <a href="index.html" class="company-name">Playful Products</a>
     </div>
 
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="dots">...</span> <!-- Three dots icon -->
+    </div>
+
     <nav>
       <ul class="menu">
         <li><a href="pictures/index.html">Pictures</a></li>
@@ -41,7 +45,6 @@
     </div>
   </section>
 
-  <!-- Added GIF and Launching Soon text -->
   <section class="launching-soon">
     <div class="gif-container">
       <img src="images/ufo_animation.gif" alt="Launching Soon Animation" class="animated-gif">
@@ -52,6 +55,15 @@
   <footer>
     <p>&copy; 2024 Playful Products. All rights reserved. | Contact us: productsplayful@gmail.com</p>
   </footer>
+
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.menu');
+
+    mobileMenu.addEventListener('click', () => {
+      menu.classList.toggle('active'); // This toggles the menu's visibility
+    });
+  </script>
 
 </body>
 </html>

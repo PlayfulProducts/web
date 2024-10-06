@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: 'fewriter';
+  font-family: 'Fewriter'; /* Ensure correct casing */
   src: url('../fonts/fewriter.ttf') format('truetype');
 }
 
@@ -21,7 +21,7 @@ body {
   background-color: #004E59;
   color: #FFFFF0;
   font-family: Arial, sans-serif;
-  height: 100%;
+  height: auto;
 }
 
 header {
@@ -44,8 +44,8 @@ header {
 }
 
 .company-name {
-  font-family: 'fewriter', monospace;
-  font-size: 2rem;
+  font-family: 'Fewriter', monospace; /* Ensure the correct font */
+  font-size: 1.5rem;
   color: #FFBF4D;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -97,16 +97,16 @@ nav ul.menu a.active {
   object-fit: cover;
 }
 
-/* Moved the motto under the banner, keeping the animation and font */
+/* Motto area */
 .motto-area {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; /* Reduced space below the motto */
+  margin-top: 16px;
+  margin-bottom: 16px; /* Reduced space below the motto */
 }
 
 .banner-text {
   font-family: 'Barthowheel', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #FFBF4D;  /* Bright orange color */
   letter-spacing: 0.2rem;
   animation: flicker 3s infinite ease-in-out;
@@ -139,19 +139,24 @@ nav ul.menu a.active {
 .gif-container {
   text-align: center;
   margin: 20px auto;
+  position: relative; /* Make this relative for positioning the text */
 }
 
 .animated-gif {
-  width: 140px;
-  height: 93px;
+  width: 120px; /* Adjusted size for the GIF */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .launching-text {
-  font-family: 'fewriter', monospace;
+  font-family: 'Fewriter', monospace; /* Use Fewriter font */
   font-size: 1.5rem;
   color: #FFBF4D;
   text-align: center;
-  margin-top: 10px;
+  margin-top: -50px; /* Position the text above the GIF */
+  position: absolute; /* Position it on top of the GIF */
+  left: 50%; /* Center the text horizontally */
+  transform: translateX(-50%); /* Adjust to center */
+  visibility: visible; /* Ensure it's visible on all screens */
 }
 
 /* Footer styling */
@@ -162,7 +167,65 @@ footer {
   color: #FFFFF0;
   font-size: 0.8rem; /* Slightly smaller font size */
   font-family: 'ShareTechMono', monospace;
-  position: fixed;
+  position: fixed; /* Keep the footer at the bottom */
   bottom: 0;
   width: 100%;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .company-name {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  nav ul.menu {
+    display: none; /* Hide menu on small screens by default */
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 15px; /* Reduce gap between menu items */
+  }
+
+  nav ul.menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  nav ul.menu a {
+    font-size: 0.9rem; /* Smaller menu item font size */
+  }
+
+  .banner-text {
+    font-size: 2rem; /* Adjust the banner text size for mobile */
+  }
+
+  .menu-toggle {
+    display: flex; /* Show menu toggle on small screens */
+    cursor: pointer;
+    font-size: 2rem; /* Size of the dots */
+    color: #FFBF4D; /* Color of the dots */
+    margin-top: -10px; 
+  }
+ 
+  .dots {
+    font-family: 'ShareTechMono', monospace; /* Font for the dots */
+    color: #FFBF4D; /* Yellow color */
+  }
+
+  .gif-container {
+    margin: 10px auto; /* Adjust GIF margin for mobile */
+  }
+
+  .launching-text {
+    font-size: 1.2rem; /* Adjust the font size for mobile */
+    visibility: visible; /* Ensure it's visible on all screens */
+  }
+}
+
+/* Hide the dots on larger screens */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Hide the dots on larger screens */
+  }
 }
