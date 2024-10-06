@@ -1,0 +1,168 @@
+/* Load the custom fonts */
+@font-face {
+  font-family: 'Barthowheel';
+  src: url('../fonts/Barthowheel.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fewriter';
+  src: url('../fonts/Fewriter.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ShareTechMono';
+  src: url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap') format('truetype');
+}
+
+/* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #004E59;
+  color: #FFFFF0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: #004E59;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.company-name {
+  font-family: 'Fewriter', monospace;
+  font-size: 2rem;
+  color: #FFBF4D;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+}
+
+.company-name:hover {
+  color: #FFBF4D;
+}
+
+/* Navigation menu */
+nav ul.menu {
+  list-style-type: none;
+  display: flex;
+  gap: 60px;
+  margin: 0;
+  padding-left: 40px;
+}
+
+nav ul.menu li {
+  font-family: 'ShareTechMono', monospace;
+}
+
+nav ul.menu a {
+  color: #FFFFF0;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav ul.menu a:hover {
+  color: #FFBF4D;
+  transform: scale(1.1);
+}
+
+nav ul.menu a.active {
+  color: #FFBF4D; /* Yellow color for active link */
+}
+
+/* Banner area */
+.banner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 500px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Moved the motto under the banner, keeping the animation and font */
+.motto-area {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Reduced space below the motto */
+}
+
+.banner-text {
+  font-family: 'Barthowheel', sans-serif;
+  font-size: 3rem;
+  color: #FFBF4D;  /* Bright orange color */
+  letter-spacing: 0.2rem;
+  animation: flicker 3s infinite ease-in-out;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Centered text under the motto */
+.centered-text {
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto; /* Adjusted to move the subtext up */
+}
+
+.centered-text .description {
+  font-family: 'ShareTechMono', monospace;
+  font-size: 1rem;
+  color: #FFFFF0;
+  line-height: 1.8rem;
+}
+
+/* GIF and Launching Soon text */
+.gif-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.animated-gif {
+  width: 140px;
+  height: 93px;
+}
+
+.launching-text {
+  font-family: 'Fewriter', monospace;
+  font-size: 1.5rem;
+  color: #FFBF4D;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 5px; /* Reduced padding to make the footer thinner */
+  background-color: #003D48;
+  color: #FFFFF0;
+  font-size: 0.8rem; /* Slightly smaller font size */
+  font-family: 'ShareTechMono', monospace;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
